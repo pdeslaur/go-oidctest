@@ -18,7 +18,7 @@ import (
 func TestNewIssuer(t *testing.T) {
 	ctx := context.Background()
 
-	signer, iss := oidctest.NewIssuer(t)
+	signer, iss := oidctest.NewIssuer(t, nil)
 
 	token, err := jwt.Signed(signer).Claims(jwt.Claims{
 		Issuer:   iss,
